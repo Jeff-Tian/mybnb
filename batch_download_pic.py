@@ -1,10 +1,10 @@
+# $('img[src^="https://z2.muscache.com/ac"]').each(function(x, y){console.log(x, y.src);})
+
 from urlparse import urlsplit
 from os.path import basename
 import urllib2
 import re
-import requests
 import os
-import json
 
 url = 'https://zh.airbnb.com/rooms/14047326'
 
