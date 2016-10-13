@@ -6,8 +6,6 @@ import urllib2
 import re
 import os
 
-url = 'https://zh.airbnb.com/rooms/14047326'
-
 dir_name = 'houses/'
 if not os.path.exists(dir_name):
     os.mkdir(dir_name)
