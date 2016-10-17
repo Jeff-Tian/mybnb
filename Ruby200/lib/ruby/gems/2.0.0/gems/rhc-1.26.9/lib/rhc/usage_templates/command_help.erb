@@ -1,0 +1,61 @@
+<% if @command.syntax.is_a?(Array) -%>
+Usage
+<%= table(
+		@command.syntax.map do |s|
+			s ? [Array(program :name).first, @command.name, s] : [' ']
+		end, 
+	  table_args('  ')
+	).join("\n") %>
+<% else -%>
+Usage: <%= Array(program :name).first %> <%= @command.name %> <%= @command.syntax %>
+<% end -%>
+
+<%= @command.description || @command.summary %>
+<% if @actions.blank? or @command.root? and @command.info.present? and @command.info[:method].present? -%>
+
+<% unless @command.info[:args].blank? or @command.options.all?{ |o| o[:hide] or o[:switches].present? } -%>
+
+Arguments
+<%= table(
+	  @command.info[:args].select do |opt| 
+	  	not opt[:hide] and not opt[:switches].present?
+	  end.map do |opt| 
+	  	[opt[:name], opt[:description]] 
+	  end, 
+	  table_args('  ', 25)
+	).join("\n") %>
+<% end -%>
+<% unless @command.options.blank? or @command.options.all?{ |o| o[:hide] } -%>
+
+Options
+<%= table(
+	  @command.options.select do |opt| 
+	  	not opt[:hide]
+	  end.map do |opt| 
+	  	[opt[:switches].join(', '), opt[:description]] 
+	  end, 
+	  table_args('  ', 25)
+	).join("\n") %>
+<% end -%>
+
+Global Options
+<%= table(
+	  @global_options.select do |opt| 
+	  	not (opt[:hide] || @command.options.any?{ |o| (o[:switches].map(&:split).map(&:first) & opt[:switches].map(&:split).map(&:first)).present? })
+	  end.map do |opt| 
+	  	[opt[:switches].join(', '), opt[:description]] 
+	  end, 
+	  table_args('  ', 25)
+	).join("\n") %>
+
+  See 'rhc help options' for a full list of global options.
+<% end -%>
+<% if @actions.present? -%>
+
+List of Actions
+<%= table(@actions.map{ |a| [a[:name], a[:summary]] }, table_args('  ', 13)).join("\n") %>
+<% if @command.default_action? -%>
+
+The default action for this resource is '<%= @command.default_action %>'
+<% end -%>
+<% end -%>

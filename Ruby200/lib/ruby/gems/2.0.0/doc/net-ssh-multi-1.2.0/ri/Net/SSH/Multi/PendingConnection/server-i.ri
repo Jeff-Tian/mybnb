@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"server:ETI".Net::SSH::Multi::PendingConnection#server;FI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LThe Net::SSH::Multi::Server object that "owns" this pending connection.;T:
+@fileI",lib/net/ssh/multi/pending_connection.rb;T:0@omit_headings_from_table_of_contents_below0F@I"'Net::SSH::Multi::PendingConnection;FcRDoc::NormalClass0

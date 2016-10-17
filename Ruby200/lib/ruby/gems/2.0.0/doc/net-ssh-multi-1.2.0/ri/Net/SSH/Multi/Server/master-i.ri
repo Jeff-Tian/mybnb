@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"master:ETI"#Net::SSH::Multi::Server#master;FI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MThe Net::SSH::Multi::Session instance that manages this server instance.;T:
+@fileI" lib/net/ssh/multi/server.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Net::SSH::Multi::Server;FcRDoc::NormalClass0

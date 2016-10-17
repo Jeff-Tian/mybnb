@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"gateway:ETI"$Net::SSH::Multi::Server#gateway;FI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"MThe Net::SSH::Gateway instance to use to establish the connection. Will ;TI"Hbe +nil+ if the connection should be established without a gateway.;T:
+@fileI" lib/net/ssh/multi/server.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Net::SSH::Multi::Server;FcRDoc::NormalClass0

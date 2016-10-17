@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"concurrent_connections:ETI"4Net::SSH::Multi::Session#concurrent_connections;FI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LThe number of allowed concurrent connections. No more than this number ;TI"0of sessions will be open at any given time.;T:
+@fileI"!lib/net/ssh/multi/session.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Net::SSH::Multi::Session;FcRDoc::NormalClass0

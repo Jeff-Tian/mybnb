@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"channels:ETI"&Net::SSH::Multi::Channel#channels;FI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"bThe collection of Net::SSH::Connection::Channel instances that this multi-channel aggregates.;T:
+@fileI"!lib/net/ssh/multi/channel.rb;T:0@omit_headings_from_table_of_contents_below0F@I"Net::SSH::Multi::Channel;FcRDoc::NormalClass0

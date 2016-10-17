@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"options:ETI"+Net::SSH::Multi::DynamicServer#options;FI"R;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"LThe hash of options that will be used to initialize the server records.;T:
+@fileI"(lib/net/ssh/multi/dynamic_server.rb;T:0@omit_headings_from_table_of_contents_below0F@I"#Net::SSH::Multi::DynamicServer;FcRDoc::NormalClass0

@@ -1,0 +1,2 @@
+U:RDoc::Attr[iI"port_from:ETI",RHC::Commands::ForwardingSpec#port_from;FI"RW;T:publico:RDoc::Markup::Document:@parts[o:RDoc::Markup::Paragraph;	[I"Cclass to represent how SSH port forwarding should be performed;T:
+@fileI"%lib/rhc/commands/port_forward.rb;T:0@omit_headings_from_table_of_contents_below0F@I""RHC::Commands::ForwardingSpec;FcRDoc::NormalClass0

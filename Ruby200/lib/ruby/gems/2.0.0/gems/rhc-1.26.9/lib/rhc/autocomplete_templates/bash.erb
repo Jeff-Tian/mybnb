@@ -1,0 +1,39 @@
+#
+# This is the bash auto completion script for the rhc command
+#
+_rhc()
+{
+  local cur opts prev
+  COMPREPLY=()
+  cur="${COMP_WORDS[COMP_CWORD]}"
+  if [ $COMP_CWORD -eq 1 ]; then
+    if [[ "$cur" == -* ]]; then
+      opts=<%= "\"%s\"" % global_options.join(' ') %>
+    elif [ -z $cur ]; then
+      opts=<%= "\"%s\"" % top_level_commands.join(' ') %>
+    else
+      opts=<%= "\"%s\"" % commands.map{ |c| c.first }.delete_if{ |s| s.include? ' ' }.sort.join(' ') %>
+    fi
+  else
+    prev="${COMP_WORDS[@]:0:COMP_CWORD}"
+    SAVE_IFS=$IFS
+    IFS=" "
+    case "${prev[*]}" in
+      <%- for name, data in commands %>
+      <%= "\"rhc %s\")" % name %>
+        if [[ "$cur" == -* ]]; then
+          opts=<%= "\"%s\"" % data[:switches].join(" ") %>
+        else
+          opts=<%= "\"%s\"" % data[:actions].join(" ") %>
+        fi
+        ;;
+      <%- end %>
+    esac
+    IFS=$SAVE_IFS
+  fi
+
+  COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+  return 0
+}
+
+complete -o default -F _rhc rhc
