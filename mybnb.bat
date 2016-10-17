@@ -1,5 +1,11 @@
 @echo off
 
+set /phouseNumber="Please input house number: "
+set /pusername="Please input user name: "
+set /ppassword="Please input password: "
+
+echo {"houseNumber": "%houseNumber%", "username": "%username%", "password": "%password%"} > input.json
+
 echo "Script Path is: "
 set scriptPath=%~d0%~p0
 echo %scriptPath%
@@ -22,12 +28,12 @@ echo %bundle%
 call %ruby% %bundle%
 if ERRORLEVEL 1 goto Failed
 
-:echo "GEM Path:"
-:set gem=%scriptPath%Ruby200\bin\gem
-:echo %gem%
+REM echo "GEM Path:"
+REM set gem=%scriptPath%Ruby200\bin\gem
+REM echo %gem%
 
-:call %ruby% %gem% install
-:if ERRORLEVEL 1 goto Failed
+REM call %ruby% %gem% install
+REM if ERRORLEVEL 1 goto Failed
 
 echo "PATH="
 set PATH=%PATH%;%CD%\tools

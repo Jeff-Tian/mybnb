@@ -1,10 +1,10 @@
-When(/^打开"(.*?)"$/) do |link|
-  visit link
-end
-
 inputs = {}
 When(/^读取用户名和密码$/) do
   inputs = JSON.parse(File.read('input.json'))
+end
+
+When(/^打开"(.*?)"$/) do |link|
+  visit link % {:houseNumber => inputs["houseNumber"]}
 end
 
 When(/^输入用户名和密码$/) do
