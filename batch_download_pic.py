@@ -13,7 +13,7 @@ if not os.path.exists(dir_name):
 offset = 0
 f = open('./houses/source.txt')
 url_content = f.read()
-answers = re.findall('z2\.muscache\.com\/ac\/pictures\/([^\.]+)\.jpg', url_content)
+answers = re.findall('.+?\.muscache\.com\/.+?\/pictures\/([^\.]+)\.jpg', url_content)
 img_count = 0
 
 print len(answers)

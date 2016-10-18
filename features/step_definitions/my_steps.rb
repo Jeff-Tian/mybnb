@@ -24,7 +24,7 @@ When(/^用javascript获取所有图片元素$/) do
   sleep 10
   output = page.execute_script('return (function(){
   var ret = [];
-  var images = $(\'img[src^="https://z2.muscache.com/ac"]\');
+  var images = $(\'img\');
   for(var i = 0; i < images.length; i++) {
     ret.push(images[i].outerHTML);
   }
