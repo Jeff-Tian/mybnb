@@ -1,0 +1,1 @@
+zip -r -X win64.zip ./
