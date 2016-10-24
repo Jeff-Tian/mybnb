@@ -50,7 +50,7 @@ echo "Python Path is: "
 set python=%scriptPath%Python27\python.exe
 echo %python%
 
-call %python% batch_download_pic.py
+call %python% batch_download_pic.py 'features\bnb.feature'
 
 :Failed
 set EXITCODE=1
