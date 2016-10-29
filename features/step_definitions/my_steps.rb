@@ -4,6 +4,7 @@ When(/^读取用户名和密码$/) do
 end
 
 When(/^打开"(.*?)"$/) do |link|
+  puts link % {:houseNumber => inputs["houseNumber"]}
   visit link % {:houseNumber => inputs["houseNumber"]}
 end
 
@@ -23,7 +24,7 @@ end
 When(/^用javascript获取所有图片元素$/) do
   output = page.execute_script('return (function(){
   var ret = [];
-  var images = $(\'img\');
+  var images = $(\'.SlideshowModal__slideshow-preload img[src*="muscache.com/im/pictures"]\');
   for(var i = 0; i < images.length; i++) {
     ret.push(images[i].outerHTML);
   }
@@ -62,4 +63,8 @@ When(/^用javascript获取所有小猪图片元素$/) do
   File.open('./houses/source.txt', 'w') do |f|
     f.puts output
   end
+end
+
+When(/^读取房源编号$/) do
+  inputs = JSON.parse(File.read('input.json'))
 end

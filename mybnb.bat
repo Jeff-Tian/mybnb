@@ -1,10 +1,8 @@
 @echo off
 
 set /phouseNumber="Please input house number: "
-set /pusername="Please input user name: "
-set /ppassword="Please input password: "
 
-echo {"houseNumber": "%houseNumber%", "username": "%username%", "password": "%password%"} > input.json
+echo {"houseNumber": "%houseNumber%"} > input.json
 
 echo "Script Path is: "
 set scriptPath=%~d0%~p0
@@ -43,14 +41,14 @@ echo "cucumber path:"
 set cucumber=%scriptPath%Ruby200\lib\ruby\gems\2.0.0\gems\cucumber-2.4.0\bin\cucumber
 echo %cucumber%
 
-call %ruby% %cucumber%
+call %ruby% %cucumber% 'features\bnb.feature'
 if ERRORLEVEL 1 goto Failed
 
 echo "Python Path is: "
 set python=%scriptPath%Python27\python.exe
 echo %python%
 
-call %python% batch_download_pic.py 'features\bnb.feature'
+call %python% batch_download_pic.py
 
 :Failed
 set EXITCODE=1
