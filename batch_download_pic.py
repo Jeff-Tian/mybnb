@@ -5,8 +5,10 @@ from os.path import basename
 import urllib2
 import re
 import os
+import json
 
-dir_name = 'houses/'
+houseNumber = json.load('./input.json', 'utf-8').houseNumber
+dir_name = 'houses/' + houseNumber
 if not os.path.exists(dir_name):
     os.mkdir(dir_name)
 
@@ -28,7 +30,6 @@ while offset < len(answers):
         output.write(img_data)
         output.close()
         print "Saved {} images".format(img_count)
-        # print "Saved {} images at url {}".format(img_count, img_url)
         img_count += 1
     except KeyboardInterrupt:
         print "Exit on user prompt"
