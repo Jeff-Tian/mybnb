@@ -1,7 +1,4 @@
 inputs = {}
-When(/^读取用户名和密码$/) do
-  inputs = JSON.parse(File.read('input.json'))
-end
 
 When(/^打开"(.*?)"$/) do |link|
   puts link % {:houseNumber => inputs["houseNumber"]}
@@ -51,9 +48,9 @@ end
 When(/^用javascript获取所有小猪图片元素$/) do
   output = page.execute_script('return (function(){
   var ret = [];
-  var images = $(\'.room_img_show .img\');
+  var images = $("img[data-src]");
   for(var i = 0; i < images.length; i++) {
-    ret.push($(images[i]).css(\'background-image\'));
+    ret.push($(images[i]).attr("src"));
   }
 
   return ret.join("; ");
