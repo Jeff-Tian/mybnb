@@ -50,7 +50,7 @@ When(/^用javascript获取所有小猪图片元素$/) do
   var ret = [];
   var images = $("img[data-src]");
   for(var i = 0; i < images.length; i++) {
-    ret.push($(images[i]).attr("src"));
+    ret.push($(images[i]).attr("data-src"));
   }
 
   return ret.join("; ");
@@ -64,4 +64,8 @@ end
 
 When(/^读取房源编号$/) do
   inputs = JSON.parse(File.read('input.json'))
+end
+
+When(/^页面上应该有一个查看照片按钮$/) do
+  expect(page).to have_content('查看照片')
 end

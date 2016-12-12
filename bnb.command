@@ -49,7 +49,21 @@ echo '检查 cucumber 完毕。'
 
 checkDependency "chromedriver"
 
-cucumber
+echo '请输入房源编号：'
+read houseNumber
+
+cat > input.json << END
+{"houseNumber": "${houseNumber}"}
+END
+
+cucumber features/bnb.feature
+
+if [ "$?" = "0" ] ; then
+    echo 'cucumber 完成'
+else
+    echo 'cucumber 失败。如果是因为 Net::ReadTimeout (Net::ReadTimeout)，请连接 VPN 后重试！'
+    die
+fi
 
 echo '检查 python...'
 

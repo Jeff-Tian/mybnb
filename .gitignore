@@ -1,7 +1,7 @@
 .idea
 input.json
 
-houses/*.jpg
+houses
 releases
 
 Thumbs.db

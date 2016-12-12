@@ -1,6 +1,8 @@
 GEM
   remote: http://rubygems.org/
   specs:
+    archive-zip (0.7.0)
+      io-like (~> 0.3.0)
     builder (3.2.2)
     capybara (2.5.0)
       mime-types (>= 1.16)
@@ -10,6 +12,9 @@ GEM
       xpath (~> 2.0)
     childprocess (0.5.9)
       ffi (~> 1.0, >= 1.0.11)
+    chromedriver-helper (1.0.0)
+      archive-zip (~> 0.7.0)
+      nokogiri (~> 1.6)
     cucumber (2.4.0)
       builder (>= 2.1.2)
       cucumber-core (~> 1.5.0)
@@ -26,6 +31,7 @@ GEM
     ffi (1.9.14-x64-mingw32)
     ffi (1.9.14-x86-mingw32)
     gherkin (4.0.0)
+    io-like (0.3.0)
     jar_wrapper (0.1.8)
       zip
     mime-types (3.0)
@@ -76,8 +82,12 @@ PLATFORMS
 
 DEPENDENCIES
   capybara
+  chromedriver-helper
   cucumber
   rspec
   selenium
   selenium-client
   selenium-webdriver
+
+BUNDLED WITH
+   1.10.6

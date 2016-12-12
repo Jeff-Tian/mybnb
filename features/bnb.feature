@@ -4,4 +4,5 @@ Feature: 批量下载高清无码图片
     * 读取房源编号
     * 打开"https://www.airbnbchina.cn/rooms/%{houseNumber}?preview"
     * 等待"3"秒
+    * 页面上应该有一个查看照片按钮
     * 用javascript获取所有图片元素

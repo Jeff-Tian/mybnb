@@ -21,7 +21,7 @@ img_count = 0
 print len(answers)
 
 while offset < len(answers):
-    post_url = 'http://image2.xiaozhustatic1.com/00,1440,960/' + answers[offset]
+    post_url = 'http://image2.xiaozhustatic1.com/00,1440,960' + answers[offset]
     print post_url
     try:
         img_data = urllib2.urlopen(post_url).read()

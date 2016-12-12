@@ -7,10 +7,13 @@ import re
 import os
 import json
 
-houseNumber = json.load('./input.json', 'utf-8').houseNumber
-dir_name = 'houses/' + houseNumber
-if not os.path.exists(dir_name):
-    os.mkdir(dir_name)
+with open('./input.json') as json_data:
+    houseNumber = json.load(json_data)['houseNumber']
+    print houseNumber
+
+    dir_name = 'houses/' + houseNumber
+    if not os.path.exists(dir_name):
+        os.mkdir(dir_name)
 
 offset = 0
 f = open('./houses/source.txt')
@@ -26,7 +29,7 @@ while offset < len(answers):
     try:
         img_data = urllib2.urlopen(post_url).read()
         file_name = basename(urlsplit(post_url)[2])
-        output = open(dir_name + file_name, 'wb')
+        output = open(dir_name + '/' + file_name, 'wb')
         output.write(img_data)
         output.close()
         print "Saved {} images".format(img_count)
@@ -35,6 +38,7 @@ while offset < len(answers):
         print "Exit on user prompt"
         exit(1)
     except:
+        print file_name + ' downloading failed!'
         pass
     finally:
         offset += 1
